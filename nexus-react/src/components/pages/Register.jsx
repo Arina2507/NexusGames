@@ -3,7 +3,8 @@ import axios from 'axios';
 import {toast} from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
-import "./Register.css";
+import "./Style.css";
+import { login_image } from "../../utils/images";
 
 export default function Register() {
     const navigate = useNavigate()
@@ -33,6 +34,12 @@ export default function Register() {
     }
 
   return (
+    <section
+        className="section sc-register d-flex align-items-center"
+        style={{
+          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${login_image}) center/cover no-repeat`,
+        }}
+      >
     <div className="wrapper">
         <form onSubmit={registerUser}>
         <h1>Register</h1>
@@ -49,7 +56,11 @@ export default function Register() {
             <FaLock className="icon"/>
             </div>
             <button type='submit'>Submit</button>
+            <div className="register-link">
+            <p>Already have an account?<a href="/login">Login</a></p>
+            </div>
         </form>
     </div>
+    </section>
   )
 }
