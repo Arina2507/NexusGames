@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import axios from 'axios'
 import {toast} from 'react-hot-toast'
@@ -7,7 +8,7 @@ import "./Style.css";
 import { login_image } from "../../utils/images";
 
 export default function Login() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [data, setData] = useState({
     email: '',
     password: '',
@@ -22,23 +23,24 @@ export default function Login() {
             password
           });
           if(data.error) {
-            toast.error(data.error)
+            toast.error(data.error);
           } else {
-            setData({});
+            setData({email: '', password: ''});
             navigate('/')
           }
         } catch (error) {
-          
+          toast.error("Login failed. Please try again.");
+          console.error("Login error:", error);
         }
     }
 
   return (
     <section
-        className="section sc-login d-flex align-items-center"
-        style={{
-          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${login_image}) center/cover no-repeat`,
-        }}
-      >
+    className="section sc-login d-flex align-items-center"
+    style={{
+      background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${login_image}) center/cover no-repeat`,
+    }}
+  >
     <div className="wrapper">
       <form onSubmit={loginUser}>
         <h1>Login</h1>
@@ -63,4 +65,3 @@ export default function Login() {
     </section>
   )
 }
-

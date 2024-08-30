@@ -51,7 +51,7 @@ const Footer = () => {
 
       <div className='footer-bottom'>
         <div className='container d-flex flex-column text-center'>
-          <p className='footer-bottom-text text-green'>Copyright &copy; 2024 Arina Nazhmedenova - All rights reserved.</p>
+          <p className='footer-bottom-text text-green'>Copyright &copy; 2024 NexusGames - All rights reserved.</p>
         </div>
       </div>
     </FooterWrapper>

@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <Provider store = {store}>
         <AppRouter/>
+
       </Provider>
     </div>
   )

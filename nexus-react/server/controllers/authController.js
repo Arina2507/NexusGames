@@ -83,8 +83,7 @@ const getProfile =(req, res) => {
     } else {
         res.json(null)
     }
-}
-
+};
 module.exports = {
     test,
     registerUser,

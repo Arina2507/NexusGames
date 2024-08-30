@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import ReactRouterBreadcrumbs from 'react-router-breadcrumbs';
 import { Link } from 'react-router-dom';
+import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
 
 const Breadcrumb = ({ dataNameById }) => {
-  const breadcrumbs = ReactRouterBreadcrumbs();
+  const breadcrumbs = useReactRouterBreadcrumbs();
 
   return (
     <BreadcrumbWrapper>

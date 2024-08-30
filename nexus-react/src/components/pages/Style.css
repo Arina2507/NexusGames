@@ -48,7 +48,7 @@ a, .nav-link{
 }
 
 .wrapper {
-    width: 420px;
+    width: 450px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     color: #fff;
@@ -120,14 +120,14 @@ a, .nav-link{
 .wrapper button {
     width: 100%;
     height: 45px;
-    background: #fff;
+    background: red;
     border: none;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     cursor: pointer;
     font-size: 16px;
-    color: #333;
+    color: #ffffff;
     font-size: 700;
 }
 

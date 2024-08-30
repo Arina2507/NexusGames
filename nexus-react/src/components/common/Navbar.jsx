@@ -4,10 +4,14 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { MdClose } from 'react-icons/md';
 import { useDispatch, useSelector } from "react-redux";
 import { selectSidebarStatus, setSidebarOff, setSidebarOn } from "../../redux/store/sidebarSlice";
+import ProfilePicture from "./ProfilePicture";
+import { woman_avatar } from "../../utils/images";
+import SearchInput from "../common/SearchInput";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const sidebarStatus = useSelector(selectSidebarStatus);
+  const { currentUser } = useSelector ((state) => state.user);
 
   return (
     <NavbarWrapper className="d-flex align-items-center">
@@ -42,12 +46,27 @@ const Navbar = () => {
                 <Link to = "/about us" className="nav-link">About Us</Link>
               </li>
             </ul>
+            <SearchInput />
 
-            <ul className="profile-place d-flex justify-content-center
-            align-items-center mt-5 flex-wrap">
-              <li className="text-uppercase fw-7 w-100 profile-text mb-2">
-                Profile<Link to = "/profile" className="profile-link"></Link>
-              </li>
+            <ul className="profile-place">
+              <Link to = "/profile" className="profile-link">
+              {currentUser ? (
+                  <>
+                    <ProfilePicture />
+                    <img
+                      src={currentUser.profilePicture || woman_avatar} // Используем изображение по умолчанию, если аватара нет
+                      alt='profile'
+                      className="profile-img"
+                    />
+                  </>
+                ) : (
+                  <img
+                    src={woman_avatar} // Если пользователь не залогинен, отображаем серый кружок
+                    alt="default profile"
+                    className="profile-img"
+                  />
+                )}
+              </Link>
             </ul>
           </div>
         </div>
@@ -138,6 +157,13 @@ const NavbarWrapper = styled.div`
     }
   }
 
+  .profile-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-cover: cover;
+  }
+
   @media screen and (min-width: 992px){
     .navbar-show-btn{
       display: none;
@@ -164,6 +190,7 @@ const NavbarWrapper = styled.div`
     .navbar-nav{
       display: flex;
       padding: 0 150px;
+      align-items: center;
     }
     .navbar-hide-btn{
       display: none;

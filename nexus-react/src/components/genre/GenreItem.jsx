@@ -35,15 +35,15 @@ const GenreItem = ({ gameItem }) => {
         <div className='block-wrap'>
           <div className='details-group'>
             <div className='details-item d-flex align-items-center'>
-              <p className='details-item-name fw-6'>Release Date:&nbsp;</p>
-              <p className='details-item-value'>{ gameData?.released}</p>
+              <p className='details-item-name fw-6'>Release Date: &nbsp;</p>
+              <p className='details-item-value'>{ gameData?.released }</p>
             </div>
             <div className='details-item d-flex align-items-center'>
-              <p className='details-item-name fw-6'>Updated:&nbsp;</p>
+              <p className='details-item-name fw-6'>Updated: &nbsp;</p>
               <p className='details-item-value'>{ gameData?.updated}</p>
             </div>
           </div>
-          <Link to = {`/games/${gameData?.id}`} className='card-button text-uppercase mt-3'>see more</Link>
+          <Link to = {`/games/${gameItem?.id}`} className='card-button text-uppercase mt-3'>see more</Link>
         </div>
       </div>
     </GenreItemWrapper>

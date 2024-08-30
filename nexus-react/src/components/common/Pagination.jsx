@@ -4,11 +4,11 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const Pagination = ({ pageHandler, nextPage, prevPage, currentPage }) => {
   const PageNextHandler = () => {
-    if(nextPage != null) pageHandler(++currentPage);
+    if(nextPage !== null) pageHandler(++currentPage);
   };
 
   const PagePrevHandler = () => {
-    if(prevPage != null) pageHandler(--currentPage);
+    if(prevPage !== null) pageHandler(--currentPage);
   };
 
   return (

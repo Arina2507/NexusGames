@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 import {
   AiFillClockCircle,
@@ -7,13 +8,15 @@ import {
 } from "react-icons/ai";
 import { FaGlobe } from "react-icons/fa";
 import PropTypes from "prop-types";
+import axios from 'axios';
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import Comments from "../../components/comments/Coments";
+import "../../styles/main.scss"
 
-const GameDetails = ({ gameData }) => {
+const GameDetails = ({gameData}) => {
   let platforms = gameData?.platforms?.map(
-    (platform) => platform.platform.name
-  );
+    (platform) => platform.platform.name);
   let developers = gameData?.developers?.map((developer) => developer.name);
   let genres = gameData?.genres?.map((genre) => genre.name);
   let publishers = gameData?.publishers?.map((publisher) => publisher.name);
@@ -31,7 +34,7 @@ const GameDetails = ({ gameData }) => {
         </div>
 
         <div className="details-right">
-          <h4 className="details-right-title fw-7 text-green mb-3">
+          <h4 className="details-right-title fw-7 text-pink mb-3">
             Game <span className="text-white">Details</span>
           </h4>
           {/* displying limited text only */}
@@ -119,7 +122,7 @@ const GameDetails = ({ gameData }) => {
         <TabList>
           <Tab>Description</Tab>
           <Tab>Platform</Tab>
-          <Tab>Stores</Tab>
+          <Tab>Comments</Tab>
         </TabList>
 
         <TabPanel>
@@ -151,12 +154,7 @@ const GameDetails = ({ gameData }) => {
           </div>
         </TabPanel>
         <TabPanel>
-          <h3 className="text-white mb-3">Available Stores</h3>
-          <div className="card-list">
-            {gameData?.stores?.map((item) => (
-              <StoreItem key={item?.store?.id} storeItem={item?.store} />
-            ))}
-          </div>
+        <Comments/>
         </TabPanel>
       </Tabs>
     </GameDetailsWrapper>

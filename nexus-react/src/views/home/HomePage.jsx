@@ -111,7 +111,8 @@ const HomePage = () => {
         style={{
           background: `linear-gradient(180deg, rgba(12, 10, 36, 0.73) 0%, rgba(0, 0, 0, 0.73) 72.92%), url(${store_image2}) center/cover no-repeat`,
         }}
-      ></section>
+      >
+      </section>
 
     </HomeWrapper>
   );

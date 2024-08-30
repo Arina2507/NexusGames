@@ -6,6 +6,7 @@ import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
 import "./Style.css";
 import { login_image } from "../../utils/images";
 
+
 export default function Register() {
     const navigate = useNavigate()
     const [data, setData] = useState({
@@ -56,6 +57,7 @@ export default function Register() {
             <FaLock className="icon"/>
             </div>
             <button type='submit'>Submit</button>
+           
             <div className="register-link">
             <p>Already have an account?<a href="/login">Login</a></p>
             </div>

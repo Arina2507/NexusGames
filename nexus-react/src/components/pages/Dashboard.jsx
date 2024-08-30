@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { userContext } from "../../../nexus-react/client/context/userContext"
+import { userContext } from "../../../context/userContext"
 
 export default function Dashboard() {
     const {user} = useContext(userContext)
