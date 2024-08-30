@@ -1,8 +1,19 @@
-# React + Vite
+Technologies
+MongoDB, Express.js, React, Node.js (MERN stack)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Backend
+PORT = 8000
+JWT_SECRET = key;
+MONGO_URL = mongodb+srv://nazhmedenova2020:password?@authorization.wkqqv6u.mongodb.net/?retryWrites=true&w=majority&appName=authorization
 
-Currently, two official plugins are available:
+MongoDB
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Frontend
+API_KEY from "https://rawg.io/api/"
+
+Run
+To start the server in a /backend folder
+npm run dev 
+
+To start the client and open the page in a /frontend folder
+npm start
